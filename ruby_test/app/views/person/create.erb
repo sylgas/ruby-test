@@ -1,0 +1,40 @@
+<!DOCTYPE html5>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Create Person</title>
+  <%= stylesheet_link_tag "application" %>
+  <div class=" page-header" style="text-align: center; color: slategrey">
+    <h1><a style="text-decoration: none" href="/">RubyDemo</a></h1>
+  </div>
+</head>
+
+<body data-ng-app="express_test.create_person">
+<div class="content" data-ng-controller="CreateController">
+  <div class="create_form" style="width:400px; margin: 0 auto">
+    <h1>Create CallPerson</h1>
+
+    <div class="required-field-block">
+      <input type="text" placeholder="First Name" data-ng-model="newPerson.firstname" class="form-control">
+
+      <div class="required-icon">
+        <div class="text">*</div>
+      </div>
+    </div>
+
+    <div class="required-field-block">
+      <input type="text" data-ng-model="newPerson.lastname" placeholder="Last Name" class="form-control">
+
+      <div class="required-icon">
+        <div class="text">*</div>
+      </div>
+    </div>
+    <input type="submit" value="Save" data-ng-click="save()" class="active btn btn-primary">
+
+    <p data-ng-repeat="name in errors" class="alert alert-danger"><strong>{{ name }}</strong></p>
+
+  </div>
+</div>
+<%= javascript_include_tag "application" %>
+</body>
+</html>
